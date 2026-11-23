@@ -1,0 +1,207 @@
+/* ==========================================================
+   Herramientas Colaborativas — hoja de estilos única
+   Diseño: fondo negro, texto blanco, cajas con borde blanco.
+   Para cambiar la tipografía del diseño de Canva, edita
+   --fuente y el <link> de Google Fonts en el <head>.
+   ========================================================== */
+
+:root {
+  --fondo: #000;
+  --texto: #fff;
+  --texto-suave: #8a8a8a;
+  --borde: 4px;
+  --fuente: "Oswald", "Arial Narrow", Impact, sans-serif;
+  --ancho-max: 1100px;
+  --espacio: clamp(0.75rem, 2.5vw, 1.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px dashed var(--texto);
+  outline-offset: 3px;
+}
+
+/* ---------- Estructura general ---------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: var(--espacio);
+}
+
+/* ---------- Navegación ---------- */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.menu a {
+  display: block;
+  padding: 0.6em 1.1em;
+  border: var(--borde) solid var(--texto);
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+  background: var(--texto);
+  color: var(--fondo);
+}
+
+/* ---------- Títulos ---------- */
+h1 {
+  margin: 0.35em 0 0.4em;
+  text-align: center;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  margin: 0 0 0.6em;
+  text-align: center;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+h3 {
+  margin: 0 0 0.5em;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  font-weight: 700;
+}
+
+/* ---------- Cajas con borde ---------- */
+.caja {
+  border: var(--borde) solid var(--texto);
+  padding: clamp(1rem, 3vw, 2rem);
+  margin-bottom: var(--espacio);
+}
+
+.caja p { margin: 0 0 1em; }
+.caja p:last-child { margin-bottom: 0; }
+
+.caja--centrada { text-align: center; }
+
+.caja ul, .caja ol { margin: 0; padding-left: 1.4em; }
+.caja li { margin-bottom: 0.4em; }
+.caja li > ul { margin-top: 0.4em; list-style: circle; }
+.caja li > ul ul { list-style: square; }
+
+.caja--lista { font-size: 0.9em; }
+
+/* ---------- Portada ---------- */
+.portada {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.autores {
+  margin: 0;
+  padding: var(--espacio) 0;
+  text-align: center;
+  color: var(--texto-suave);
+  font-weight: 700;
+}
+
+/* ---------- Miembros: tres columnas ---------- */
+.miembros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio);
+  margin-bottom: var(--espacio);
+}
+
+.miembro {
+  border: var(--borde) solid var(--texto);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  min-height: 12rem;
+}
+
+.miembro ul { margin: 0; padding-left: 1.3em; }
+
+/* ---------- Botones (Anexo I) ---------- */
+.botones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.boton {
+  display: block;
+  padding: 0.8em 0.5em;
+  background: var(--texto);
+  color: var(--fondo);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  border: var(--borde) solid var(--texto);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.boton:hover {
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+  padding: var(--espacio);
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.8em;
+}
+
+/* ---------- Responsive ---------- */
+/* Tablet */
+@media (max-width: 900px) {
+  .miembros { grid-template-columns: 1fr 1fr; }
+  .botones { grid-template-columns: 1fr 1fr; }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .menu ul { gap: 0.35rem; }
+  .menu a { padding: 0.5em 0.8em; font-size: 0.9rem; border-width: 3px; }
+
+  .miembros { grid-template-columns: 1fr; }
+  .miembro { min-height: 0; }
+
+  .caja { border-width: 3px; }
+  .caja ul, .caja ol { padding-left: 1.2em; }
+  .portada { min-height: 50vh; }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
