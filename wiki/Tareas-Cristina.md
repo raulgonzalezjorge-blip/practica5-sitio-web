@@ -1,6 +1,6 @@
-# Tareas de Cristiana · Sitio web
+# Tareas de Cristina · Sitio web
 
-Cristiana es responsable de este repositorio. Acciones a llevar a cabo:
+Cristina es responsable de este repositorio. Acciones a llevar a cabo:
 
 1. Aceptar la invitación al repositorio y hacer **fork** (ver [Flujo de trabajo con Git](Flujo-de-trabajo-Git.md)).
 2. Coger las tareas de la columna **TO DO** del [tablero](https://github.com/users/raulgonzalezjorge-blip/projects/4), de una en una, y moverlas a **DOING**.
