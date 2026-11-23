@@ -6,7 +6,7 @@ Wiki del proyecto. Aquí se describe qué tiene que hacer cada desarrollador y c
 | Rol | Persona | GitHub |
 |-----|---------|--------|
 | Jefe de proyecto (Scrum Master) | Raúl | [raulgonzalezjorge-blip](https://github.com/raulgonzalezjorge-blip) |
-| Desarrollador/a de este repositorio | Cristiana | _pendiente_ |
+| Desarrollador/a de este repositorio | Cristina | _pendiente_ |
 | Product Owner | El profesor y el jefe de proyecto de otro grupo | |
 
 ## Enlaces
@@ -19,7 +19,7 @@ Resto de repositorios de la práctica:
 - [Anexo II (SQL Steam)](https://github.com/raulgonzalezjorge-blip/practica5-anexo2-sql)
 
 ## Páginas de esta wiki
-- [Tareas de Cristiana](Tareas-Cristiana.md)
+- [Tareas de Cristina](Tareas-Cristina.md)
 - [Flujo de trabajo con Git](Flujo-de-trabajo-Git.md)
 - [Scrum: daily y cierre de sprint](Scrum.md)
 
