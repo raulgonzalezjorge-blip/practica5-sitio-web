@@ -10,10 +10,10 @@ git config --global user.email "el-email-de-tu-cuenta-de-github"
 Acepta la invitación al repositorio en <https://github.com/raulgonzalezjorge-blip/practica5-sitio-web/invitations> (también llega por email).
 
 ### 1. Una sola vez: hacer el fork y clonarlo
-1. Entra en <https://github.com/raulgonzalezjorge-blip/practica5-sitio-web> y pulsa **Fork** → **Create fork**. Se crea `TU_USUARIO/practica5-sitio-web`.
+1. Entra en <https://github.com/raulgonzalezjorge-blip/practica5-sitio-web> y pulsa **Fork** → **Create fork**. Se crea `cristinasabinatorres/practica5-sitio-web`.
 2. Clona **tu fork** y enlaza el repositorio oficial como `upstream`:
 ```
-git clone https://github.com/TU_USUARIO/practica5-sitio-web.git
+git clone https://github.com/cristinasabinatorres/practica5-sitio-web.git
 cd practica5-sitio-web
 git remote add upstream https://github.com/raulgonzalezjorge-blip/practica5-sitio-web.git
 git remote -v
@@ -43,12 +43,12 @@ git push -u origin feature/1-estructura-index
 
 ### 5. Abrir el Pull Request hacia el repositorio oficial
 En tu fork aparecerá **Compare & pull request**. Comprueba que pone:
-`base repository: raulgonzalezjorge-blip/practica5-sitio-web` · `base: develop` ← `head repository: TU_USUARIO/practica5-sitio-web` · `compare: feature/1-estructura-index`.
+`base repository: raulgonzalezjorge-blip/practica5-sitio-web` · `base: develop` ← `head repository: cristinasabinatorres/practica5-sitio-web` · `compare: feature/1-estructura-index`.
 En la descripción escribe `Closes #1` para que la tarea se cierre al fusionar. Rellena el checklist.
 
 Con GitHub CLI (opcional) sería:
 ```
-gh pr create --repo raulgonzalezjorge-blip/practica5-sitio-web --base develop --head TU_USUARIO:feature/1-estructura-index --title "Título de la tarea" --body "Closes #1"
+gh pr create --repo raulgonzalezjorge-blip/practica5-sitio-web --base develop --head cristinasabinatorres:feature/1-estructura-index --title "Título de la tarea" --body "Closes #1"
 ```
 
 ### 6. Si el jefe pide cambios
