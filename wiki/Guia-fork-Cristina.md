@@ -79,17 +79,18 @@ Debes ver cuatro líneas: `origin` apunta a tu fork y `upstream` al de Raúl.
 1. En el tablero (enlace «Tablero de tareas» de la tabla de arriba) mueve tu tarea de **TO DO** a **DOING**.
 2. Trae lo último de `develop` y crea tu rama desde ahí:
 ```
-git fetch upstream
-git switch -c develop upstream/develop
+git switch develop
+git pull upstream develop
 git switch -c feature/6-validar-w3c
 ```
-Si `develop` ya existe, usa `git switch develop` y luego `git pull upstream develop`.
+`develop` ya viene creada al clonar tu fork: no hay que crearla, solo traer lo último de `upstream`.
+Comprueba que estás en tu rama: `git branch` tiene que marcar con `*` la línea `feature/6-validar-w3c`.
 
 > 📸 **Captura para el documento:** Rama creada: la terminal con `git switch -c …` y el tablero con tu tarea en DOING.
 
 ## Paso 5. Hacer el cambio
 
-Trabaja con tu editor como siempre. Cuando termines una parte que funcione:
+Trabaja con tu editor **sobre los archivos de la carpeta que clonaste** (`Documentos\practica5-sitio-web`); si editas otra copia, Git no ve los cambios. Cuando termines una parte que funcione:
 ```
 git status
 git add index.html css/estilos.css
@@ -149,6 +150,18 @@ git branch -d feature/6-validar-w3c
 | `CONFLICT (content)` | Tú y otra persona tocasteis las mismas líneas | Abre el archivo, deja el código bueno entre `<<<<<<<`, `=======` y `>>>>>>>`, borra las marcas, `git add` y `git commit` |
 | `Permission denied` / `403` | Estás subiendo al repositorio de Raúl | Sube a `origin` (tu fork) |
 | `fatal: not a git repository` | No estás dentro de la carpeta del repositorio | `cd practica5-sitio-web` |
+| `pathspec '…' did not match any files` | El archivo no está donde dices o se llama distinto | `ls` para ver dónde está y cómo se llama de verdad (ojo con `.pdf.pdf`) |
+| `nothing to commit, working tree clean` | Git no ve ningún cambio: no se guarda nada | El archivo tiene que estar dentro de la carpeta del repositorio; revisa con `git status` |
+| `Please tell me who you are` | Falta configurar tu nombre o email | Repite el paso 0 y vuelve a hacer el `git commit` |
+| `has no upstream branch` | Has hecho `git push` sin `-u origin <rama>` | `git push -u origin <tu rama>` |
+| `fatal: a branch named 'develop' already exists` | Intentas crear `develop` y ya existe | Usa `git switch develop` (paso 4) |
 | He trabajado en `develop` sin rama | — | `git switch -c feature/<nº>-<nombre>`: los cambios se pasan a la rama nueva |
 
-Si te atascas, copia el mensaje de error entero y pásaselo a Raúl.
+Si te atascas, ejecuta esto en la carpeta del repositorio y pásale a Raúl **todo** lo que salga:
+```
+pwd
+git status
+git branch
+git remote -v
+git log --oneline -3
+```
